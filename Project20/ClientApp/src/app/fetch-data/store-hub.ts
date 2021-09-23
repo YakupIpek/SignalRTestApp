@@ -23,6 +23,10 @@ export class StoreHub {
 
     this.onConnected = this.connection.start();
 
-    this.connection.on("SendMessage", (message: string) => this.onMessage.next(message));
+    this.connection.on("SendMessage", (message: string) => {
+
+      alert(message);
+      this.onMessage.next(message)
+    });
   }
 }

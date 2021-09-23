@@ -11,7 +11,7 @@ export class FetchDataComponent {
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string, private storeHub: StoreHub) {
 
-    this.storeHub.onMessage.asObservable().subscribe(message => {
+    this.storeHub.onMessage.subscribe(message => {
       console.log(message);
       alert(message);
     });
